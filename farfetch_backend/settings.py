@@ -132,5 +132,6 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Stripe settings
-STRIPE_PUBLIC_KEY = 'pk_test_51RArs3CZ3ACovowFvrJZPt0m718O3Fk2EdaAWTBsBr12PjK3HtqJ23FbA6dny0rHnCAwbSwUV5XqREU3BlUWac1900K1CDYHIR'
-STRIPE_SECRET_KEY = 'sk_test_51RArs3CZ3ACovowFIfj95BkxgqTgk4Ei6dirTxsVfKOYpTzRXGhakf7UF5bLHrlJsgQsZruR2s3pyO5SZnk5zpCZ00st3zL45m'
+# Instead of hardcoding the keys, use environment variables
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY')
